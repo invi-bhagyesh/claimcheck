@@ -12,11 +12,13 @@
   },
   "exports": {
     ".": "./src/claimcheck.js",
-    "./audit": "./src/audit.js"
+    "./audit": "./src/audit.js",
+    "./speccheck": "./src/speccheck.js"
   },
   "dependencies": {
     "@anthropic-ai/bedrock-sdk": "^0.12.0",
     "@anthropic-ai/sdk": "^0.39.0",
-    "@anthropic-ai/vertex-sdk": "^0.14.4"
+    "@anthropic-ai/vertex-sdk": "^0.14.4",
+    "openai": "^6.39.0"
   }
 }

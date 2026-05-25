@@ -1,12 +1,14 @@
 import Anthropic from '@anthropic-ai/sdk';
 import AnthropicVertex from '@anthropic-ai/vertex-sdk';
 import { AnthropicBedrock } from '@anthropic-ai/bedrock-sdk';
+import OpenAI from 'openai';
 
 let client;
 let totalInput = 0;
 let totalOutput = 0;
 let vertexConfig = null;
 let bedrockConfig = null;
+let openrouterConfig = null;
 
 /**
  * Configure the API client to use Vertex AI.
@@ -29,6 +31,14 @@ export function configureVertex(config) {
 export function configureBedrock(config) {
   bedrockConfig = config ?? {};
   vertexConfig = null;
+  openrouterConfig = null;
+  client = null;
+}
+
+export function configureOpenRouter(config) {
+  openrouterConfig = config ?? {};
+  vertexConfig = null;
+  bedrockConfig = null;
   client = null;
 }
 
@@ -43,6 +53,11 @@ function getClient() {
       client = new AnthropicBedrock({
         awsRegion: bedrockConfig.region ?? 'us-east-1',
       });
+    } else if (openrouterConfig) {
+      client = new OpenAI({
+        baseURL: 'https://openrouter.ai/api/v1',
+        apiKey: openrouterConfig.apiKey,
+      });
     } else {
       client = new Anthropic();
     }
@@ -50,21 +65,66 @@ function getClient() {
   return client;
 }
 
+// Convert Anthropic tool schema to OpenAI function calling format
+function anthropicToolToOpenAI(tool) {
+  return {
+    type: 'function',
+    function: {
+      name: tool.name,
+      description: tool.description,
+      parameters: tool.input_schema,
+    },
+  };
+}
+
 /**
  * Call the Anthropic API with a single tool, forcing tool_use.
  * Guarantees structured JSON output matching the tool's input_schema.
  */
 export async function callWithTool({ model, prompt, tool, toolChoice, system, verbose, maxTokens }) {
-  const anthropic = getClient();
+  const apiClient = getClient();
 
   if (verbose) {
     console.error(`[api] model=${model} tool=${tool.name} prompt_len=${prompt.length}`);
   }
 
-  // Some models (Opus 4.7+) don't accept temperature.
+  if (openrouterConfig) {
+    // OpenAI-compatible path for OpenRouter
+    const messages = [];
+    if (system) messages.push({ role: 'system', content: system });
+    messages.push({ role: 'user', content: prompt });
+
+    const response = await apiClient.chat.completions.create({
+      model,
+      max_tokens: maxTokens ?? 4096,
+      temperature: 0,
+      tools: [anthropicToolToOpenAI(tool)],
+      tool_choice: { type: 'function', function: { name: tool.name } },
+      messages,
+    });
+
+    const choice = response.choices[0];
+    const toolCall = choice.message.tool_calls?.[0];
+    if (!toolCall) {
+      throw new Error(`Expected tool_call response, got: ${JSON.stringify(choice.message)}`);
+    }
+
+    const input = JSON.parse(toolCall.function.arguments);
+    const usage = response.usage ?? {};
+    totalInput += usage.prompt_tokens ?? 0;
+    totalOutput += usage.completion_tokens ?? 0;
+
+    if (verbose) {
+      console.error(`[api] usage: input=${usage.prompt_tokens} output=${usage.completion_tokens}`);
+    }
+
+    return { name: toolCall.function.name, input };
+  }
+
+  // Anthropic path (direct, Vertex, Bedrock)
   const supportsTemperature = !/opus-4-7/.test(model);
 
-  const response = await anthropic.messages.create({
+  const response = await apiClient.messages.create({
     model,
     max_tokens: maxTokens ?? 4096,
     ...(supportsTemperature ? { temperature: 0 } : {}),
