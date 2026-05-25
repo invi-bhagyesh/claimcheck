@@ -1,2 +1,4 @@
 node_modules/
 *~
+new_version/
+env
