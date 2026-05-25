@@ -1,0 +1,352 @@
+[
+  {
+    "id": "verina_basic_2",
+    "name": "findSmallest",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that finds the smallest number in an array of integers.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_24",
+    "name": "firstEvenOddDifference",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that finds the difference between the first even number and the first odd number in an array of integers. The method should process the array sequentially until it identifies the first even number and the first odd number, and then return the difference calculated as (first even number) minus (first odd number).",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_63",
+    "name": "has_close_elements",
+    "subset": "basic",
+    "requirement": "The task is to determine whether there exists at least one pair of different floating-point numbers in a list such that the absolute difference between them is less than a given threshold. The focus is solely on deciding if such a pair is present in the list.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_88",
+    "name": "ToArray",
+    "subset": "basic",
+    "requirement": "This task involves converting a list of integers into an array such that the array contains all the elements of the list in the exact same order. The objective is to ensure that the array has the same number of elements as the list and that each element in the array corresponds exactly to the element at the same position in the list.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_54",
+    "name": "CanyonSearch",
+    "subset": "basic",
+    "requirement": "This task is about determining the minimum absolute difference between any pair of integers, where one integer is taken from the first sorted array and the other integer is taken from the second sorted array. The focus is on accurately finding the smallest absolute difference between any two elements from the arrays, independent of the specific techniques or programming language used.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_48",
+    "name": "isPerfectSquare",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that determines whether a given non-negative natural number is a perfect square. In other words, the method should return true if there exists a natural number whose square is equal to the input number, and false if no such number exists.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_77",
+    "name": "modify_array_element",
+    "subset": "basic",
+    "requirement": "This task involves updating an element within a 2-dimensional array. The goal is to modify only a specific inner array by changing one of its elements to a new value while keeping every other element and all other inner arrays unchanged.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_34",
+    "name": "findEvenNumbers",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that extracts even numbers from an array of integers. The method should return a new array containing only the even numbers found in the input array, while preserving the order in which they appear.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_69",
+    "name": "LinearSearch",
+    "subset": "basic",
+    "requirement": "This problem involves determining the index of the first occurrence of a specified element within an array of integers. The objective is to identify the correct position where the target element appears for the first time, ensuring that all elements prior to that index are different from the target.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_85",
+    "name": "reverse",
+    "subset": "basic",
+    "requirement": "This problem focuses on reversing an array of integers. The goal is to take an input array and produce a new array with the elements arranged in the reverse order.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_11",
+    "name": "lastDigit",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that extracts the last digit of a given non-negative integer. The method should return the last digit, which is obtained by computing the remainder when the number is divided by 10. The result must always be between 0 and 9.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_38",
+    "name": "allCharactersSame",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that checks whether all characters in an input string are identical. The method should return true if every character in the string is the same, and false if at least one character differs. An empty string or a single-character string is considered to have all characters identical.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_75",
+    "name": "minArray",
+    "subset": "basic",
+    "requirement": "This task involves finding the minimum element in a non-empty array of integers. The goal is to identify and return the smallest number present in the array.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_41",
+    "name": "hasOnlyOneDistinctElement",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that determines whether an array of integers contains only one distinct element. The method should return true if the array is empty or if every element in the array is the same, and false if there are at least two different elements.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_10",
+    "name": "isGreater",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that determines if a given integer is strictly greater than every element in a provided array. The method should return true only if the integer is larger than each element in the array; otherwise, it should return false.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_22",
+    "name": "isPeakValley",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that determines whether a list of integers follows a peak-valley pattern.\n\nA list follows this pattern if:\nA. It strictly increases at first,\nB. Then strictly decreases,\nC. Both parts are non-empty.\n\nExamples:\n- [1, 3, 5, 4, 2] -> true\n- [1, 2, 3] -> false\n- [5, 4, 3] -> false\n- [1, 2, 2, 1] -> false",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_3",
+    "name": "LongestCommonSubsequence",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that finds the length of the logest common subsequence of two input arrays.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_37",
+    "name": "majorityElement",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that returns the majority element from a list of integers.\n\nThe majority element is the one that appears more than ⌊n / 2⌋ times in the list, where n is the list's length. You may assume that a majority element always exists in the input.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_50",
+    "name": "mergeSorted",
+    "subset": "advanced",
+    "requirement": "This task involves merging two sorted arrays of natural numbers (it is ill defined if inputs aren't sorted.)",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_6",
+    "name": "allVowels",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that determines whether a given string contains all 5 English vowels: a, e, i, o, u.\r\n\r\nThe check is case-insensitive, meaning that both uppercase and lowercase vowels count.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_28",
+    "name": "longestConsecutive",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 function that finds the length of the longest sequence of consecutive integers present in a given list. The numbers do not need to appear in order. The elements are unique.\n\nA consecutive sequence consists of integers that can be arranged in increasing order with no gaps. Your function should find the longest such streak.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_34",
+    "name": "longestIncreasingSubsequence",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that finds the length of the longest strictly increasing subsequence from a given list of integers.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_76",
+    "name": "topKFrequent",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that returns the k most frequent elements from a list of integers. The method should count the frequency of each distinct element in the list and return the k elements with the highest frequency.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_30",
+    "name": "longestIncreasingStreak",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 function that computes the length of the longest strictly increasing contiguous subarray in a list of integers. A subarray is a sequence of consecutive elements, and it is strictly increasing if each element is greater than the previous one.\n\nThe function should correctly handle empty lists, lists with all equal elements, and long stretches of increasing numbers.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_42",
+    "name": "maxProfit",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 function that takes a list of stock prices and returns the maximum profit achievable by buying on one day and selling on a later day.\n\nIf no profit is possible, the function should return 0.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_103",
+    "name": "UpdateElements",
+    "subset": "basic",
+    "requirement": "This problem involves updating an array of integers by modifying two specific positions. Specifically, the element at index 4 should be increased by 3, and the element at index 7 should be changed to 516. The goal is to correctly update these positions while leaving the rest of the array unchanged. The description assumes that the array contains at least 8 elements.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_4",
+    "name": "kthElement",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that finds the kth element in a given array using 1-based indexing. The method should return the element at the specified position, where the first element is at position 1.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_96",
+    "name": "SwapSimultaneous",
+    "subset": "basic",
+    "requirement": "This task requires swapping two integer values. Given two integers as input, the objective is to produce an output where their order is reversed: the first element of the output corresponds to the second input and the second element corresponds to the first input.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_20",
+    "name": "uniqueProduct",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that calculates the product of all distinct integers in an array. The method should consider each unique integer only once when computing the product and return the resulting value. If the array is empty, the method should return 1.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_64",
+    "name": "insert",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that inserts a subarray of characters into another array of characters at a specified index. The method takes the original array (oline) and, given the effective length l to consider, inserts another array of characters (nl) of effective length p starting at the index atPos. The resulting array is of length l + p and is constructed as follows:\n• All characters before the insertion position (atPos) remain unchanged.  \n• The new characters from nl are inserted starting at index atPos.  \n• The remaining characters from the original array (starting at atPos) are shifted right by p positions.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_51",
+    "name": "BinarySearch",
+    "subset": "basic",
+    "requirement": "This task requires creating a function that determines the correct insertion index for a given integer in a sorted array. The goal is to identify an index where every number before it is less than the specified value, and every number from that index onward is greater than or equal to the value. If the given integer is larger than all elements in the array, the function should return the array’s size.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_92",
+    "name": "SwapArithmetic",
+    "subset": "basic",
+    "requirement": "This problem involves swapping the values of two integers. Given two integers as inputs, the objective is to return the two numbers in reversed order.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_14",
+    "name": "containsZ",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that determines whether a given string contains the character 'z' or 'Z'. The method should return true if the string includes either the lowercase or uppercase letter 'z', and false otherwise.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_62",
+    "name": "Find",
+    "subset": "basic",
+    "requirement": "The problem involves finding the first occurrence of a specified key in an array of integers. Your task is to identify the index at which the key appears for the first time in the array and return that index. If the key is not found, return -1.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_82",
+    "name": "remove_front",
+    "subset": "basic",
+    "requirement": "This task is about processing an array of integers by producing a new array that excludes the first element. The objective is to define a clear behavior: if the array contains at least one element, return a modified array starting from the second element.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_68",
+    "name": "LinearSearch",
+    "subset": "basic",
+    "requirement": "The task is to determine the position of a target integer in a given array. The goal is to return the index corresponding to the first occurrence of the target value. If the target is not present in the array, the result should indicate that by returning the size of the array. This description focuses entirely on understanding the problem without specifying any particular implementation method.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_83",
+    "name": "concat",
+    "subset": "basic",
+    "requirement": "This task involves concatenating two arrays of integers by appending the second array to the end of the first array. The goal is to produce a new array that sequentially contains all elements from the first array followed by all elements from the second array.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_101",
+    "name": "Triple",
+    "subset": "basic",
+    "requirement": "This problem involves computing the triple of a given integer. The goal is to produce an output that is exactly three times the input value.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_70",
+    "name": "LinearSearch3",
+    "subset": "basic",
+    "requirement": "This task involves determining the first index in an array where a given condition holds true. The goal is to identify the position of the first element that meets a specified criterion, ensuring that no preceding element does.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_basic_6",
+    "name": "minOfThree",
+    "subset": "basic",
+    "requirement": "This task requires writing a Lean 4 method that finds the minimum among three given integers. The method should return the smallest value, ensuring that the result is less than or equal to each of the input numbers and that it is one of the provided integers.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_63",
+    "name": "removeDuplicates",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that counts the unique elements from a sorted array.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_71",
+    "name": "shortestBeautifulSubstring",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that, given a binary string `s` and an integer `k`, finds the shortest contiguous substring that contains exactly `k` characters `'1'`.\n\nAmong all substrings of `s` that contain exactly `k` occurrences of `'1'`, return the one that is shortest in length. If there are multiple such substrings with the same length, return the lexicographically smallest one.\n\nIf no such substring exists, return the empty string.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_66",
+    "name": "reverseWords",
+    "subset": "advanced",
+    "requirement": "Given an input string \"words_str\", this task requires writing a Lean 4 function that reverses the order of its words. A word is defined as a contiguous sequence of non-space characters. The function must remove any extra spaces so that the output string contains words separated by a single space and has no leading or trailing spaces. The characters within each word must stay the same as the original input.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_38",
+    "name": "maxCoverageAfterRemovingOne",
+    "subset": "advanced",
+    "requirement": "This task requires implementing a Lean 4 method that, given a list of intervals, returns the maximum amount that can be spanned after we removed one of the intervals\nYou may assume you'll receive at least one interval",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_12",
+    "name": "firstDuplicate",
+    "subset": "advanced",
+    "requirement": "Write a Lean 4 function that returns the first duplicate integer found in a list. The function should return the value of the first duplicate it encounters, scanning from left to right. If no duplicates exist, return -1.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_70",
+    "name": "semiOrderedPermutation",
+    "subset": "advanced",
+    "requirement": "-----Description---\nThis task requires writing a Lean 4 method that's goal is to determine the minimum number of adjacent swaps needed to make the array semi-ordered. You may repeatedly swap 2 adjacent elements in the array. A permutation is called semi-ordered if the first number equals 1 and the last number equals n.\n\n-----Input-----\n\nThe input consists of:\n- nums: A permutation of [1, 2, ..., n] where n is the length of the list (all distinct integers in range [1, n]).\n\n----Output-----\n\nThe output is an integer representing the minimum number of adjacent swaps needed.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_15",
+    "name": "increasingTriplet",
+    "subset": "advanced",
+    "requirement": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exist, return false.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_69",
+    "name": "searchInsert",
+    "subset": "advanced",
+    "requirement": "Given a sorted list of distinct integers and a target value, return the index if the target is found. If it is not found, return the index where it would be inserted to maintain the sorted order.\n\nThis function must preserve the sorted property of the list. The list is assumed to be strictly increasing and contain no duplicates.",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_16",
+    "name": "insertionSort",
+    "subset": "advanced",
+    "requirement": "Implement the insertion sort algorithm in Lean 4. The function takes a single list of integers\nas input and returns a new list that contains the same integers in ascending order.\n\nImplementation must follow a standard insertion sort approach, placing each element into its correct position.\nThe resulting list must be sorted in ascending order.\nThe returned list must be a permutation of the input list (i.e., contain exactly the same elements).",
+    "expected": "confirmed"
+  },
+  {
+    "id": "verina_advanced_4",
+    "name": "LongestIncreasingSubsequence",
+    "subset": "advanced",
+    "requirement": "This task requires writing a Lean 4 method that finds the length of the longest increasing sequence in a given array. The method should return the length of the longest increasing subsequence, in which every element is strictly less than the latter element.",
+    "expected": "confirmed"
+  }
+]

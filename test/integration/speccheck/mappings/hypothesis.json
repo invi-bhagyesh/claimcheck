@@ -1,0 +1,352 @@
+[
+  {
+    "id": "sorted_order",
+    "requirement": "sorted() returns a list where every element is less than or equal to the next element.",
+    "expected": "confirmed",
+    "domain": "sorting",
+    "source": "stdlib"
+  },
+  {
+    "id": "sorted_length",
+    "requirement": "sorted() returns a list of the same length as the input.",
+    "expected": "confirmed",
+    "domain": "sorting",
+    "source": "stdlib"
+  },
+  {
+    "id": "sorted_permutation",
+    "requirement": "sorted() returns a permutation of its input: every element in the input appears in the output with the same multiplicity.",
+    "expected": "confirmed",
+    "domain": "sorting",
+    "source": "stdlib"
+  },
+  {
+    "id": "sorted_stable",
+    "requirement": "sorted() is stable: elements that compare equal appear in the same relative order as in the input.",
+    "expected": "confirmed",
+    "domain": "sorting",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_split_whitespace",
+    "requirement": "str.split() with no arguments splits on runs of whitespace, discards leading and trailing whitespace, and returns no empty strings.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_split_delimiter",
+    "requirement": "str.split(sep) splits the string at every occurrence of sep and returns the pieces between separators, including empty strings when sep appears consecutively or at the start or end.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_split_maxsplit",
+    "requirement": "str.split(sep, maxsplit) performs at most maxsplit splits; the last element of the result contains the remainder of the string unsplit.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "list_index",
+    "requirement": "list.index(x) returns the index of the first occurrence of x in the list, and raises ValueError if x is not present.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "stdlib"
+  },
+  {
+    "id": "list_reverse",
+    "requirement": "reversed() returns an iterator whose elements are the elements of the input sequence in reverse order.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "stdlib"
+  },
+  {
+    "id": "set_union",
+    "requirement": "set.union() returns a set containing every element that appears in at least one of the input sets, and no element that appears in none of them.",
+    "expected": "confirmed",
+    "domain": "sets",
+    "source": "stdlib"
+  },
+  {
+    "id": "set_intersection",
+    "requirement": "set.intersection() returns a set containing exactly those elements that appear in all of the input sets.",
+    "expected": "confirmed",
+    "domain": "sets",
+    "source": "stdlib"
+  },
+  {
+    "id": "set_difference",
+    "requirement": "set.difference(other) returns a set containing elements that are in the first set but not in other.",
+    "expected": "confirmed",
+    "domain": "sets",
+    "source": "stdlib"
+  },
+  {
+    "id": "dict_get",
+    "requirement": "dict.get(key, default) returns the value for key if key is in the dictionary, and default otherwise. The dictionary is not modified.",
+    "expected": "confirmed",
+    "domain": "dicts",
+    "source": "stdlib"
+  },
+  {
+    "id": "dict_update",
+    "requirement": "dict.update(other) adds all key-value pairs from other to the dictionary, overwriting existing keys with values from other.",
+    "expected": "confirmed",
+    "domain": "dicts",
+    "source": "stdlib"
+  },
+  {
+    "id": "counter_mostcommon",
+    "requirement": "Counter.most_common(n) returns the n elements with the highest counts, in descending order of count. If n is omitted, all elements are returned.",
+    "expected": "confirmed",
+    "domain": "collections",
+    "source": "stdlib"
+  },
+  {
+    "id": "dedup_order",
+    "requirement": "A deduplication function removes duplicate elements from a list and returns the remaining elements in their original relative order.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "binary_search",
+    "requirement": "A binary search function returns the index of the target value in a sorted list, or -1 if the target is not present.",
+    "expected": "confirmed",
+    "domain": "search",
+    "source": "handcrafted"
+  },
+  {
+    "id": "flatten",
+    "requirement": "A flatten function takes a list of lists and returns a single list containing all elements of all sublists, in order.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "running_max",
+    "requirement": "A running maximum function returns a list of the same length as the input where each element is the maximum of all input elements up to and including that position.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "group_by",
+    "requirement": "A group-by function takes a list and a key function and returns a dictionary mapping each distinct key value to the list of elements that produce that key, preserving the original order of elements within each group.",
+    "expected": "confirmed",
+    "domain": "dicts",
+    "source": "handcrafted"
+  },
+  {
+    "id": "rotate_list",
+    "requirement": "A list rotation function moves the first k elements to the end of the list. The length of the result equals the length of the input.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "zip_lists",
+    "requirement": "zip() pairs up elements from two sequences by position, stopping at the length of the shorter sequence.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "stdlib"
+  },
+  {
+    "id": "max_value",
+    "requirement": "max() returns an element from the iterable that is greater than or equal to every other element. It raises ValueError on an empty iterable.",
+    "expected": "confirmed",
+    "domain": "aggregation",
+    "source": "stdlib"
+  },
+  {
+    "id": "count_occurrences",
+    "requirement": "list.count(x) returns the number of times x appears in the list.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "stdlib"
+  },
+  {
+    "id": "chunk_list",
+    "requirement": "A chunking function splits a list into consecutive non-overlapping sublists of size n. The last chunk may be smaller than n if the list length is not divisible by n. No elements are added or dropped.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "str_strip",
+    "requirement": "str.strip() returns a copy of the string with leading and trailing whitespace removed. Characters in the middle of the string are never affected.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_replace",
+    "requirement": "str.replace(old, new) returns a copy of the string with all occurrences of substring old replaced by new. If old is not found, the original string is returned unchanged.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_startswith",
+    "requirement": "str.startswith(prefix) returns True if the string begins with prefix, and False otherwise. An empty prefix always returns True.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_join",
+    "requirement": "str.join(iterable) concatenates the elements of the iterable with the string as separator between each pair. If the iterable has one element, the result equals that element with no separator.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "str_lower_upper",
+    "requirement": "str.lower() returns a copy of the string with all cased characters converted to lowercase. str.upper() returns a copy with all cased characters converted to uppercase. Applying lower then upper then lower produces the same result as applying lower once.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "stdlib"
+  },
+  {
+    "id": "abs_value",
+    "requirement": "abs(x) returns the absolute value of x: it equals x when x is non-negative, and -x when x is negative. The result is always non-negative.",
+    "expected": "confirmed",
+    "domain": "math",
+    "source": "stdlib"
+  },
+  {
+    "id": "divmod_consistency",
+    "requirement": "divmod(a, b) returns a pair (q, r) such that a == b * q + r and 0 <= r < abs(b) when b is positive.",
+    "expected": "confirmed",
+    "domain": "math",
+    "source": "stdlib"
+  },
+  {
+    "id": "pow_basic",
+    "requirement": "pow(base, exp) for non-negative integer exp returns the result of multiplying base by itself exp times. pow(x, 0) is 1 for any x. pow(x, 1) equals x.",
+    "expected": "confirmed",
+    "domain": "math",
+    "source": "stdlib"
+  },
+  {
+    "id": "sum_builtin",
+    "requirement": "sum(iterable) returns the total of all elements in the iterable. For an empty iterable, sum returns 0. The sum of a single-element list equals that element.",
+    "expected": "confirmed",
+    "domain": "aggregation",
+    "source": "stdlib"
+  },
+  {
+    "id": "min_value",
+    "requirement": "min() returns an element from the iterable that is less than or equal to every other element. It raises ValueError on an empty iterable.",
+    "expected": "confirmed",
+    "domain": "aggregation",
+    "source": "stdlib"
+  },
+  {
+    "id": "enumerate_pairs",
+    "requirement": "enumerate(seq, start) yields pairs (i, elem) where i begins at start and increments by 1 for each element. The second component of each pair matches the corresponding element of the original sequence in order.",
+    "expected": "confirmed",
+    "domain": "itertools",
+    "source": "stdlib"
+  },
+  {
+    "id": "map_function",
+    "requirement": "map(f, seq) applies f to each element of seq and returns the results in the same order. The output has the same length as the input.",
+    "expected": "confirmed",
+    "domain": "itertools",
+    "source": "stdlib"
+  },
+  {
+    "id": "filter_function",
+    "requirement": "filter(pred, seq) returns the elements of seq for which pred returns True, in their original order. Every element in the result satisfies pred, and every element of seq that satisfies pred appears in the result.",
+    "expected": "confirmed",
+    "domain": "itertools",
+    "source": "stdlib"
+  },
+  {
+    "id": "set_symmetric_difference",
+    "requirement": "set.symmetric_difference(other) returns a set containing elements that are in exactly one of the two sets: elements that appear in the first set but not the second, or in the second but not the first.",
+    "expected": "confirmed",
+    "domain": "sets",
+    "source": "stdlib"
+  },
+  {
+    "id": "set_issubset",
+    "requirement": "set.issubset(other) returns True if every element of the set is also in other. The empty set is a subset of every set.",
+    "expected": "confirmed",
+    "domain": "sets",
+    "source": "stdlib"
+  },
+  {
+    "id": "dict_keys_values",
+    "requirement": "dict.keys() returns all keys and dict.values() returns all values. For any dictionary, len(dict.keys()) equals len(dict.values()) equals len(dict). Iterating keys and values in the same order yields matching key-value pairs.",
+    "expected": "confirmed",
+    "domain": "dicts",
+    "source": "stdlib"
+  },
+  {
+    "id": "dict_pop",
+    "requirement": "dict.pop(key) removes the key from the dictionary and returns its value. After popping, the key is no longer in the dictionary and the dictionary has one fewer entry.",
+    "expected": "confirmed",
+    "domain": "dicts",
+    "source": "stdlib"
+  },
+  {
+    "id": "merge_sorted_lists",
+    "requirement": "A function that merges two sorted lists into a single sorted list. The result contains every element from both inputs with correct multiplicity, and every adjacent pair in the result is in non-decreasing order.",
+    "expected": "confirmed",
+    "domain": "sorting",
+    "source": "handcrafted"
+  },
+  {
+    "id": "sliding_window",
+    "requirement": "A sliding window function returns all contiguous sublists of length k from a list. The number of windows equals len(list) - k + 1 when len(list) >= k, and zero otherwise. Each window preserves the order of elements from the original list.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "transpose_matrix",
+    "requirement": "A transpose function takes a list of equal-length rows and returns columns as rows: element (i, j) of the input becomes element (j, i) of the output. The result has as many rows as the input has columns.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "interleave_lists",
+    "requirement": "An interleave function takes two lists and returns a single list that alternates elements from each: first from list A, then from list B, then from A, and so on. If one list is longer, its remaining elements are appended at the end.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "partition_predicate",
+    "requirement": "A partition function takes a predicate and a list and returns two lists: the first containing all elements that satisfy the predicate, the second containing all elements that do not. Both sublists preserve the relative order of the original list, and concatenating them yields a permutation of the input.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  },
+  {
+    "id": "cumulative_sum",
+    "requirement": "A cumulative sum function returns a list of the same length as the input where each element is the sum of all input elements up to and including that position. The last element of the result equals the sum of the entire input.",
+    "expected": "confirmed",
+    "domain": "math",
+    "source": "handcrafted"
+  },
+  {
+    "id": "is_palindrome",
+    "requirement": "A palindrome check returns True if a string reads the same forwards and backwards, and False otherwise. The empty string and all single-character strings are palindromes.",
+    "expected": "confirmed",
+    "domain": "strings",
+    "source": "handcrafted"
+  },
+  {
+    "id": "compact_list",
+    "requirement": "A compact function removes consecutive duplicate elements from a list, keeping only the first occurrence in each run. The result preserves the relative order of distinct adjacent elements, and no two adjacent elements in the result are equal.",
+    "expected": "confirmed",
+    "domain": "lists",
+    "source": "handcrafted"
+  }
+]

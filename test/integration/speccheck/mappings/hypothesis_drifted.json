@@ -1,0 +1,72 @@
+[
+  {
+    "id": "sorted_order",
+    "requirement": "sorted() returns a list where every element is less than or equal to the next element.",
+    "driftType": "weakened-postcondition",
+    "driftDescription": "Uses strict less-than (<) instead of less-than-or-equal (<=), misses equal elements",
+    "specCode": "@given(st.lists(st.integers()))\ndef test_sorted_order(lst):\n    result = sorted(lst)\n    for i in range(len(result) - 1):\n        assert result[i] < result[i + 1]"
+  },
+  {
+    "id": "sorted_permutation",
+    "requirement": "sorted() returns a permutation of its input: every element in the input appears in the output the same number of times.",
+    "driftType": "narrowed-scope",
+    "driftDescription": "Only checks that length is preserved, not that the multiset of elements is preserved",
+    "specCode": "@given(st.lists(st.integers()))\ndef test_sorted_permutation(lst):\n    result = sorted(lst)\n    assert len(result) == len(lst)"
+  },
+  {
+    "id": "sorted_stable",
+    "requirement": "sorted() is stable: elements that compare equal appear in the same relative order in the output as in the input.",
+    "driftType": "missing-case",
+    "driftDescription": "Only checks that the output is sorted by key, does not verify relative order is preserved for equal elements",
+    "specCode": "@given(st.lists(st.tuples(st.integers(min_value=0, max_value=5), st.integers())))\ndef test_sorted_stable(lst):\n    result = sorted(lst, key=lambda x: x[0])\n    for i in range(len(result) - 1):\n        assert result[i][0] <= result[i + 1][0]"
+  },
+  {
+    "id": "str_split_whitespace",
+    "requirement": "str.split() with no arguments splits on runs of whitespace, discards leading and trailing whitespace, and returns no empty strings.",
+    "driftType": "narrowed-scope",
+    "driftDescription": "Only checks that result is non-empty for non-empty input; misses the no-empty-strings guarantee and leading/trailing whitespace handling",
+    "specCode": "@given(st.text(min_size=1))\ndef test_str_split_whitespace(s):\n    result = s.split()\n    if s.strip():\n        assert len(result) > 0"
+  },
+  {
+    "id": "str_split_delimiter",
+    "requirement": "str.split(sep) splits the string at every occurrence of sep and the pieces joined back with sep reconstruct the original string.",
+    "driftType": "weakened-postcondition",
+    "driftDescription": "Only checks count of pieces equals occurrences+1, does not verify that joining pieces reconstructs the original",
+    "specCode": "@given(st.text(min_size=1), st.text(min_size=1))\ndef test_str_split_delimiter(s, sep):\n    parts = s.split(sep)\n    assert len(parts) == s.count(sep) + 1"
+  },
+  {
+    "id": "list_index",
+    "requirement": "list.index(x) returns the index of the first occurrence of x in the list, and raises ValueError if x is not present.",
+    "driftType": "missing-case",
+    "driftDescription": "Only checks the happy path (element present); does not check that ValueError is raised when element is absent",
+    "specCode": "@given(st.lists(st.integers()), st.integers())\ndef test_list_index(lst, x):\n    assume(x in lst)\n    idx = lst.index(x)\n    assert lst[idx] == x"
+  },
+  {
+    "id": "set_union",
+    "requirement": "set.union() returns a set containing every element that appears in at least one of the input sets.",
+    "driftType": "narrowed-scope",
+    "driftDescription": "Only checks that the result is a superset of the first set; does not check the second set's elements are included",
+    "specCode": "@given(st.frozensets(st.integers()), st.frozensets(st.integers()))\ndef test_set_union(a, b):\n    result = a.union(b)\n    assert a <= result"
+  },
+  {
+    "id": "set_intersection",
+    "requirement": "set.intersection() returns a set containing exactly those elements that appear in all of the input sets.",
+    "driftType": "weakened-postcondition",
+    "driftDescription": "Only checks that result is a subset of the first set; misses that result must also be a subset of the second set and must contain all common elements",
+    "specCode": "@given(st.frozensets(st.integers()), st.frozensets(st.integers()))\ndef test_set_intersection(a, b):\n    result = a.intersection(b)\n    assert result <= a"
+  },
+  {
+    "id": "set_difference",
+    "requirement": "set.difference(other) returns a set containing elements that are in the first set but not in the other set.",
+    "driftType": "missing-case",
+    "driftDescription": "Checks that no element in result appears in b, but does not check that all elements of a not in b are included (subset direction missing)",
+    "specCode": "@given(st.frozensets(st.integers()), st.frozensets(st.integers()))\ndef test_set_difference(a, b):\n    result = a.difference(b)\n    for x in result:\n        assert x not in b"
+  },
+  {
+    "id": "list_reverse",
+    "requirement": "reversed() returns an iterator whose elements are the elements of the input sequence in reverse order.",
+    "driftType": "tautology",
+    "driftDescription": "Only checks that the reversed list has the same length as the original; does not check order is actually reversed",
+    "specCode": "@given(st.lists(st.integers()))\ndef test_list_reverse(lst):\n    result = list(reversed(lst))\n    assert len(result) == len(lst)"
+  }
+]
